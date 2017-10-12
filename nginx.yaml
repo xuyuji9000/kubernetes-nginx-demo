@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+    name: my-nginx
+spec:
+    replicas: 2
+    template:
+        metadata:
+            labels:
+                run: my-nginx
+        spec:
+            containers:
+            - name: my-nginx
+              image: registry.docker-cn.com/library/nginx:1.13-alpine
+              ports:
+              - containerPort: 80
